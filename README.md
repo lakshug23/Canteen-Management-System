@@ -7,5 +7,4 @@ The Canteen Delivery System is a simple web-based application that allows users 
 
 - Display a menu with food items and prices.
 - Allow users to select items and place orders.
-- Provide an order confirmation page.
 - Responsive design for different devices.
