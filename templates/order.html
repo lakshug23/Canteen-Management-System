@@ -1,41 +1,48 @@
 <html>
+
 <head>
- <title>Page title</title>
- <style>
-   body{
+    <title>Page title</title>
+    <style>
+        body {
             background-size: 100% 100%;
-  
-   }
-   .h-primary{
-          margin: 50px;
-          padding: 60px
-   }
-   body{
-          line-height:1.8;
-    } 
- </style>
+
+        }
+
+        .h-primary {
+            margin: 50px;
+            padding: 60px
+        }
+
+        body {
+            line-height: 1.8;
+        }
+    </style>
 </head>
-<body background="databg.jpg">
-   
-       <section id="contact-container">
-         <font face="Times New Roman" color="White" size="3" align="center">
-        <h1 class="h-primary">ORDER FOOD</h1>
-        <div class="form">
-            
-            <form action="">
-                <div>
-                    <label for="name">Quantity</label><br>
-                    <input type="text" id="Quantity" placeholder="Quantity">
-                </div>
 
-                
-            </form>
-        
+<body style="background-image: url('{{ url_for('static', filename='assets/background.avif') }}');">
 
-            <!-- <button onclick="document.location=aa.html">CONFIRM</button> -->
+    <section id="contact-container">
+        <font face="Times New Roman" color="yellow" size="3" align="center">
+            <h1 class="h-primary">ORDER FOOD</h1>
+            <div class="form">
 
-        </div>
+                <form action="">
+                    <div>
+                        <label for="name">Quantity</label><br>
+                        <input type="text" id="Quantity" placeholder="Quantity">
+                    </div>
+
+
+                </form>
+
+
+                <!-- <button onclick="document.location=aa.html">CONFIRM</button> -->
+
+            </div>
     </section>
-<center><a href="order_placed.html"><b><i><font style="text-decoration: none;" face="script MJ" size="2" color="red">Place Order </font></i></b></a></center>
+    <center><a href="order_placed.html"><b><i>
+                    <font style="text-decoration: none;" color="white">Place Order </font>
+                </i></b></a></center>
 </body>
+
 </html>
