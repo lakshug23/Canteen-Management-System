@@ -11,13 +11,19 @@ menu = [
 
 @app.route('/')
 def index():
-    return render_template('index.html', menu=menu)
+    return render_template('login.html', menu=menu)
 
-@app.route('/place_order', methods=['POST'])
+@app.route('/menu.html')
+def get_menu():
+    return render_template('menu.html', menu=menu)
+
+@app.route('/order.html')
 def place_order():
-    selected_items = request.form.getlist('item')
-    total_price = sum(float(item['price']) for item in menu if str(item['id']) in selected_items)
-    return f'Order placed successfully. Total price: ${total_price:.2f}'
+    return render_template('order.html', menu=menu)
+
+@app.route('/order_placed.html')
+def order_success():
+    return render_template('order_placed.html', menu=menu)
 
 if __name__ == '__main__':
     app.run(debug=True)

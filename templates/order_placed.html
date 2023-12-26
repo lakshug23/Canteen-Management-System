@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed Successfully</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 20px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .order-token {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .pickup-message {
+            color: #31708f;
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: #d6e4f0;
+            border: 1px solid #b9cde5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var orderToken = generateOrderToken();
+            var readyTime = new Date();
+            readyTime.setMinutes(readyTime.getMinutes() + 5);
+            var formattedReadyTime = readyTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
+
+            document.getElementById('orderToken').innerText = orderToken;
+            document.getElementById('order-ready-time').innerText = 'Your order will be ready at ' + formattedReadyTime;
+        });
+
+        function generateOrderToken() {
+            // Generate a random 6-digit number as the order token
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            <p>Your order has been placed successfully!</p>
+        </div>
+
+        <div class="order-token">
+            <p>Order Token Number: <span id="orderToken"></span></p>
+        </div>
+
+        <div class="pickup-message">
+            <p id="order-ready-time"></p>
+            <p>Please wait and get ready to enjoy your delicious meal!</p>
+        </div>
+    </div>
+</body>
+</html>
